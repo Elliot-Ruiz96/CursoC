@@ -43,3 +43,16 @@ void c6_ejemplo()
     printf("%s \n", buffer);
     fclose(archivito);
 }
+
+void c6_ejemplo2()
+{
+    persona *p = (persona*) malloc(sizeof(persona);
+            inicializa_persona(p "Elliot Ruiz")
+}
+
+void guarda_persona(const persona *p)
+{
+    FILE *p_archivo = fopen("personas.txt","w");
+    fprintf(p_archivo, "%s");
+
+}
