@@ -1,34 +1,34 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
+const int Tam_temp = 100;
+void invertir_palabra(char *palabra);
+void numero(int*);
 
-#define MAX_ARRAY 100
-
-void invierte(char cadenafuente[MAX_ARRAY],char cadenanueva[MAX_ARRAY]);
-
-int main()
-{
-    char cadena[MAX_ARRAY], cadenainvertida[MAX_ARRAY];
-
-    printf("Introduzca una cadena de como maximo 100 caracteres: ");
-    gets(cadena);
-    invierte(cadena, cadenainvertida);
-
-    printf("\nLa cadena invertida es %s. ", cadenainvertida);
-
-    return 0;
+int main(){
+    char palabra[Tam_temp];
+    printf("Ingresa una cadena sin espacio: \n");
+    scanf("%s",palabra);
+    invertir_palabra(palabra);
 }
 
-void invierte(char cadenafuente[MAX_ARRAY],char cadenanueva[MAX_ARRAY])
-{
-    int longitud,i,j;
-    longitud=strlen(cadenafuente);
-    j=longitud-1;
-    for (i=0;i<longitud;i++)
-    {
-        cadenanueva[i]=cadenafuente[j];
-        j--;
+void invertir_palabra(char *palabra){
+    char *ptrletrauno , *ptrletrados;
+    int resta = 1,Tam_array = 0;
+    bool ciclo = true;
+    Tam_array = strlen(palabra);
+    while(ciclo){
+        for(int i=0;i<Tam_array-resta;i++)
+        {
+            ptrletrauno = palabra[i];
+            ptrletrados = palabra[i+1];
+            palabra[i] = ptrletrados;
+            palabra[i+1] = ptrletrauno;
+        }
+        resta +=1;
+        if (Tam_array == resta){
+            ciclo = false;
+        }
     }
-    cadenanueva[longitud]='\0';
-    return;
-
+    printf("%s\n",palabra);
 }
