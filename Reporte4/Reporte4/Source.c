@@ -39,3 +39,53 @@ void funcion_mostrar()
     printf("Nombre del animal: %s\n", c[num_el_animal].nombre);
     printf("Especie del animal: %s\n", c[num_el_animal].especie);
 }
+
+void funcion_ordenar()
+{
+    animal c[max_animales];
+    int i, j, pivot, temp, primero, ultimo;
+    primero = c[0];
+    ultimo = c[max_animales];
+    if(primero < ultimo)
+    {
+        pivot = primero;
+        i = primero;
+        j = ultimo;
+        while(i < j)
+        {
+            while(c[i].edad <= c[pivot].edad && i < ultimo)
+            {
+                i++;
+                while(c[j].edad > c[pivot].edad)
+                {
+                    j--;
+                    if(i < j)
+                    {
+                        temp = c[i].edad;
+                        c[i].edad = c[j].edad;
+                        c[j].edad = temp;
+                    }
+                }
+            }
+            temp = c[pivot].edad;
+            c[pivot].edad = c[j].edad;
+            c[j].edad = temp;
+        }
+    }
+}
+
+void funcion_ordenar2()
+{
+    printf("\n3. Ordenar animales:\n");
+    animal c[max_animales];
+    int i;
+    for(i = 0; i < max_animales; i++)
+    {
+        funcion_ordenar();
+        printf("El orden es: ");
+    }
+    for(i = 0; i < max_animales ; i++)
+    {
+        printf(" %d", c[num_animal].edad);
+    }
+}
