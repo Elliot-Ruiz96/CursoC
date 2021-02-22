@@ -4,4 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.c
+    Animal.c \
+    Source.c
+
+HEADERS += \
+    Animal.h
