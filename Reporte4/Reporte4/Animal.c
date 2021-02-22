@@ -30,7 +30,6 @@ int main()
                 funcion_mostrar();
                 break;
         case 3: funcion_ordenar();
-                funcion_ordenar2();
                 break;
         }
     }
