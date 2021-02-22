@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 #define longitud 20
 #define longitud2 20
-#define max_animales 2
+#define max_animales 10
 
 typedef struct animal    //Evitara escribir "struct" en cada declaracion de variables | Asigna un array de 10 elementos
 {
@@ -17,7 +18,7 @@ animal
 
 int main()
 {
-    int opcion;
+    int opcion, num_animal=0;
 
     printf("Bienvenido al uso de Estructuras!\n");
     do
@@ -37,16 +38,17 @@ int main()
         switch (opcion)
         {
         case 1: printf("\n1. Agregar animal:\n");
-                animal c, *ptr_c;
-                ptr_c = &c;
-                printf("\nIngrese la edad del animal: ");
+                animal c[max_animales], *ptr_c;
+                ptr_c = &c[num_animal];
+                printf("\nIngrese la edad del animal #%d: ", num_animal+1);
                 scanf("%d", &ptr_c->edad);
-                printf("Ingrese el nombre del animal: ");
+                printf("Ingrese el nombre del animal #%d: ", num_animal+1);
                 //fflush(stdin);  //Usada para borrar el buffer de salida y mover los datos almacenados en consola en caso de usar (gets)
                 scanf("%s", &ptr_c->nombre);
-                printf("Ingrese la especie del animal: ");
+                printf("Ingrese la especie del animal #%d: ", num_animal+1);
                 //fflush(stdin);
                 scanf("%s", &ptr_c->especie);
+                num_animal = num_animal+1;
                 break;
         case 2: printf("\n2. Mostrar animales:\n");
                 printf("\nEdad del animal: %d\n", ptr_c ->edad);
