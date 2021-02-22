@@ -13,6 +13,8 @@ typedef struct animal    //Evitara escribir "struct" en cada declaracion de vari
 animal
 ;
 
-int returnseven(void);
+
+void funcion_ingresar();
+void funcion_mostrar();
 
 #endif // ANIMAL_H
