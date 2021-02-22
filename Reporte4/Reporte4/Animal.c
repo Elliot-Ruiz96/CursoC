@@ -29,7 +29,8 @@ int main()
         case 2:
                 funcion_mostrar();
                 break;
-        case 3: printf("\n3. Ordenar animales:\n");
+        case 3: funcion_ordenar();
+                funcion_ordenar2();
                 break;
         }
     }
