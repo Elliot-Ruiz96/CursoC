@@ -16,5 +16,7 @@ animal
 
 void funcion_ingresar();
 void funcion_mostrar();
+void funcion_ordenar();
+void funcion_ordenar2();
 
 #endif // ANIMAL_H
